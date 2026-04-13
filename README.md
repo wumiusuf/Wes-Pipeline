@@ -36,6 +36,9 @@ End-to-end somatic variant calling pipeline for matched tumour-normal whole exom
 - Python 3.13.5 
 - samtools 0.1.19-96b5f2294a
 
+## Scripts
+- *vcf_parsing.py* - for filtering raw ENSEMBL VEP annotated variants (--everything) to canonical variants only
+- *high_impact_variant.py* - for selecting only clinically relevant variants
 
 ## Key Findings
 - **TP53 p.R175H** — known hotspot missense mutation, pathogenic 
