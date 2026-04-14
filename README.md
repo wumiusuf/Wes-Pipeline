@@ -36,17 +36,25 @@ End-to-end somatic variant calling pipeline for matched tumour-normal whole exom
 - Python 3.13.5 
 - samtools 0.1.19-96b5f2294a
 
-## Scripts
-- *vcf_parsing.py* - for filtering raw ENSEMBL VEP annotated variants (--everything) to canonical variants only
-- *high_impact_variant.py* - for selecting only clinically relevant variants
+## Pipeline Usage
+```bash
+conda activate wes
+bash scripts/run_pipeline.sh
+```
+ 
+## Output
+- **can_variants.tsv**  — List of Canonical PASS Variants
+- **clin_var_summary.csv**  — Clinically Relevant Variants summary (Canonical Filtered variants only)
+- **mutation_spectrum.tsv** — Mutation Class distribution with counts and percentages
 
 ## Key Findings
 - **TP53 p.R175H** — known hotspot missense mutation, pathogenic 
   (ClinVar), DNA binding domain, consistent with known HCC1395 profile
 - **BRCA2 p.Glu1593Ter** — truncating stop gained variant, 
   HIGH impact, loss of function
-
-
+- **Mutation spectrum** —  C>T mutation class dominance
+- **Contamination estimate** — <1% confirmed by GATK CalculateContamination
+  
 ## Author
 Omowumi Yusuf  
 Assay Development Scientist | Clinical Bioinformatics    
